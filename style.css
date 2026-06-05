@@ -1,293 +1,559 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-header {
-    background: #ffffff;
-    color: #000000;
-    padding: 1rem 0;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-header nav ul {
-    list-style: none;
-    margin-left: 300px;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #f4c542;
-}
-
-.hero {
-    background: url('background.jpg') no-repeat center center/cover;
-    color: #ffffff;
-    text-align: center;
-    padding: 100px 0;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-section {
-    padding: 2rem 0;
-}
-
-section h2 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-form input, form textarea, form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-form button:hover {
-    background: #f4c542;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
-
-#about .container {
-  text-align: center; /* Yazıyı yatay olarak ortalar */
-  margin: 0 auto; /* Bölümü ortalar */
-  line-height: 1.6; /* Daha rahat okunabilirlik için satır aralığı */
-}
-
-#about {
-  margin-top: 80px; /* Ana sayfadan 'Hakkımızda'ya ekstra boşluk */
-}
-
-#contact {
-  margin-top: 80px; /* 'Hakkımızda'dan İletişim'e ekstra boşluk */
-}
-
-/* İletişim Bilgileri */
-.contact-info {
-    font-size: 1rem;
-    line-height: 2;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* İkon ve yazı arasındaki boşluk */
-    margin: 0;
-}
-
-.contact-info a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info a:hover {
-    color: #f4c542;
-}
-
-/* İkonlar */
-.contact-info .icon {
-    width: 20px; /* İkon boyutu */
-    height: 20px;
-}
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
 header {
-    text-align: center;
-    margin: 1px 0; /* Başlık çevresine boşluk */
-  }
-  
-  .logo-title {
-    display: flex;
-    align-items: center; /* Dikey hizalama */
-    justify-content: center; /* Yatay hizalama */
-    gap: 10px; /* Amblem ve başlık arasındaki boşluk */
-  }
-  
-  .logo {
-    width: 190px;
-    height: 190px;
-    object-fit: contain; /* Logoyu düzgün şekilde ölçeklendir */
-  }
+  background: #ffffff;
+  color: #000000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-  .brand-name {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
-  }
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-/* Slider */
-.album {
-    display: flex; /* Resimleri yan yana sıralamak için */
-    flex-wrap: wrap; /* Ekran küçükse alt satıra geçmesi için */
-    gap: 10px; /* Resimler arasında boşluk */
-    justify-content: center; /* Resimleri ortalamak için */
-  }
-  
-  .album img {
-    width: 200px; /* Resimlerin genişliği */
-    height: 150px; /* Resimlerin yüksekliği */
-    object-fit: cover; /* Resim boyutlarını kesmeden ayarlar */
-    border-radius: 5px; /* Köşeleri yuvarlatır (isteğe bağlı) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Resme gölge efekti */
-  }
-  .album {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .album img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 250px;
+}
 
-  .album {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Otomatik sütun düzeni */
-    gap: 10px;
-    justify-items: center; /* Resimleri ortalar */
-  }
-  
-  .album img {
-    width: 90%; /* Grid hücresini doldurur */
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
 
-  .hero {
-    position: relative; /* İçerik üstte olacak şekilde arka plan yerleştirir */
-    width: 100%; /* Tam genişlik */
-    height: 300px; /* Bölüm yüksekliği */
-    background-image: url('background.jpg'); /* Arka plan görseli */
-    background-size: cover; /* Görseli bölüme sığdırır */
-    background-position: center; /* Görseli ortalar */
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Arka plan gölgesi */
-    display: flex; /* İçeriği hizalamak için */
-    flex-direction: column;
-    justify-content: center; /* Dikeyde ortalama */
-    align-items: center; /* Yatayda ortalama */
-    text-align: center; /* Metni ortala */
-    color: white; /* Yazı rengi */
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Yazıya gölge */
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Yazıya gölge */
-  }
+.brand-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Siyah yarı saydam katman */
-    z-index: 1; /* Yazılar görünsün diye düşük seviye */
-  }
-  
-  .hero h1,
-  .hero p {
-    position: relative; /* Katman altına düşmesin diye */
-    z-index: 2;
-  }
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  #home {
-    position: relative;
-    height: 70vh; /* Boyutu biraz küçülttük */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out; /* Arka plan geçişi için */
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.7); /* Gölgeli efekt */
-    padding: 20px; /* Kenarlardan biraz içeri çekildi */
+header nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+header nav ul li a:hover {
+  color: #f4c542;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+#home {
+  position: relative;
+  min-height: 50vh;
+  height: auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
 }
 
 #home h1 {
-
-  color: white; /* Beyaz renk */
-  font-size: 2.5em; /* Yazı boyutunu ayarlayabilirsiniz */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Gölgeli efekt ekleyebilirsiniz */
-
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  max-width: 100%;
 }
 
-#about p{
-
-   margin-top: 50px;
-
+#home p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
+/* ============================================
+   SECTIONS
+   ============================================ */
+section {
+  padding: 2rem 0;
+}
 
+section h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
+}
 
+#about {
+  margin-top: 40px;
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+}
+
+#about .container {
+  text-align: center;
+  line-height: 1.8;
+}
+
+#about p {
+  margin-top: 30px;
+  font-size: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+/* ============================================
+   GALLERY / ALBUM
+   ============================================ */
+.album {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 3rem 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.album img {
+  width: 100%;
+  max-width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+#contact {
+  margin-top: 40px;
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+}
+
+.contact-info {
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-info a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: #f4c542;
+}
+
+.contact-info .icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+footer .container {
+  padding: 0 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   FORM STYLES (if used)
+   ============================================ */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+form button:hover {
+  background: #f4c542;
+  color: #333;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (768px)
+   ============================================ */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  header .container {
+    gap: 10px;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+
+  header nav ul {
+    gap: 10px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  header nav ul li a {
+    font-size: 0.85rem;
+  }
+
+  #home {
+    min-height: 45vh;
+    padding: 40px 15px;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  #home p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.7rem;
+  }
+
+  #about p {
+    font-size: 0.95rem;
+    margin-top: 20px;
+  }
+
+  .album {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    width: 95%;
+    padding: 2rem 0;
+  }
+
+  .album img {
+    max-width: 100%;
+    height: 150px;
+  }
+
+  .contact-info {
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .contact-info .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (480px)
+   ============================================ */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  header {
+    padding: 0.8rem 0;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-title {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  header nav ul {
+    gap: 8px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul li a {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border: 1px solid #f4c542;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  #home {
+    min-height: 40vh;
+    padding: 30px 12px;
+    background-attachment: scroll;
+  }
+
+  #home h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  #home p {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 1.5rem 0;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #about {
+    margin-top: 20px;
+    padding: 2rem 0;
+  }
+
+  #about p {
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+
+  .album {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .album img {
+    height: 120px;
+    border-radius: 6px;
+  }
+
+  #contact {
+    margin-top: 20px;
+    padding: 2rem 0;
+  }
+
+  .contact-info {
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .contact-info p {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info a {
+    font-size: 0.9rem;
+  }
+
+  .contact-info .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  footer {
+    padding: 1.5rem 0;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - EXTRA SMALL (320px)
+   ============================================ */
+@media (max-width: 320px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  #home h1 {
+    font-size: 1.3rem;
+  }
+
+  #home p {
+    font-size: 0.85rem;
+  }
+
+  section h2 {
+    font-size: 1.3rem;
+  }
+
+  .album {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .album img {
+    height: 100px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY & UTILITIES
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+}
