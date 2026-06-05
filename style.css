@@ -27,59 +27,97 @@ body {
 header {
   background: #ffffff;
   color: #000000;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-header .container {
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  padding: 0 15px;
 }
 
 .logo-title {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  flex: 1;
-  min-width: 250px;
+  flex-shrink: 0;
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
 .brand-name {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #333;
   white-space: nowrap;
 }
 
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
 }
 
-header nav ul li a {
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li a {
   color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
-header nav ul li a:hover {
+.nav-menu ul li a:hover {
   color: #f4c542;
 }
 
@@ -293,27 +331,60 @@ form button:hover {
     padding: 0 10px;
   }
 
-  header .container {
-    gap: 10px;
+  .header-container {
+    width: 100%;
+    padding: 0 10px;
   }
 
   .logo {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
 
   .brand-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
-  header nav ul {
-    gap: 10px;
-    width: 100%;
-    justify-content: space-around;
+  .hamburger {
+    display: flex;
   }
 
-  header nav ul li a {
-    font-size: 0.85rem;
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    max-height: 300px;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 15px 0;
+  }
+
+  .nav-menu ul li {
+    padding: 0;
+  }
+
+  .nav-menu ul li a {
+    display: block;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-menu ul li a:hover {
+    background-color: #f9f9f9;
   }
 
   #home {
@@ -378,39 +449,61 @@ form button:hover {
     padding: 0.8rem 0;
   }
 
-  header .container {
-    flex-direction: column;
-    gap: 10px;
+  .header-container {
+    width: 100%;
+    padding: 0 10px;
   }
 
   .logo-title {
-    width: 100%;
-    flex-direction: column;
     gap: 8px;
   }
 
   .logo {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
   }
 
   .brand-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
-  header nav ul {
-    gap: 8px;
-    width: 100%;
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2.5px;
+    gap: 4px;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-menu.active {
+    max-height: 250px;
+  }
+
+  .nav-menu ul {
     flex-direction: column;
-    align-items: center;
+    gap: 0;
+    padding: 10px 0;
   }
 
-  header nav ul li a {
-    font-size: 0.8rem;
-    padding: 8px 12px;
-    border: 1px solid #f4c542;
-    border-radius: 4px;
-    display: inline-block;
+  .nav-menu ul li a {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
   }
 
   #home {
