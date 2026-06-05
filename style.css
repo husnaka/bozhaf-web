@@ -49,7 +49,7 @@ header nav ul li a:hover {
     padding: 100px 0;
 }
 
-.hero h2 {
+.hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
@@ -166,6 +166,12 @@ header {
     object-fit: contain; /* Logoyu düzgün şekilde ölçeklendir */
   }
 
+  .brand-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+
 /* Slider */
 .album {
     display: flex; /* Resimleri yan yana sıralamak için */
@@ -269,7 +275,7 @@ header {
     padding: 20px; /* Kenarlardan biraz içeri çekildi */
 }
 
-#home h2 {
+#home h1 {
 
   color: white; /* Beyaz renk */
   font-size: 2.5em; /* Yazı boyutunu ayarlayabilirsiniz */
