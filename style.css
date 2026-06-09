@@ -1,5 +1,5 @@
 /* ============================================
-   RESET & BASE
+   RESET & BASE STYLES
    ============================================ */
 * {
   margin: 0;
@@ -11,7 +11,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .container {
@@ -22,15 +22,16 @@ body {
 }
 
 /* ============================================
-   HEADER
+   HEADER & NAVIGATION
    ============================================ */
 header {
-  background: #fff;
+  background: #ffffff;
+  color: #000000;
   padding: 0.8rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -40,12 +41,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 15px;
 }
 
 .logo-title {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -57,59 +60,102 @@ header {
 .brand-name {
   font-size: 1.4rem;
   font-weight: bold;
+  color: #333;
+  white-space: nowrap;
 }
 
-/* Hamburger */
+/* Hamburger Button */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
-  border: 0;
   background: none;
+  border: none;
   cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
   background: #333;
-  transition: 0.3s;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
 }
 
 .nav-menu ul {
+  list-style: none;
   display: flex;
   gap: 25px;
-  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-menu a {
+.nav-menu ul li a {
+  color: #000000;
   text-decoration: none;
-  color: #000;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-menu ul li a:hover {
+  color: #f4c542;
 }
 
 /* ============================================
-   HERO
+   HERO SECTION
    ============================================ */
 #home {
+  position: relative;
   min-height: 50vh;
+  height: auto;
+  color: white;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #fff;
-  padding: 60px 20px;
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("background.jpg") center/cover;
+    url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
 }
 
 #home h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  max-width: 100%;
 }
 
 #home p {
   font-size: 1.2rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* ============================================
@@ -120,76 +166,109 @@ section {
 }
 
 section h2 {
-  text-align: center;
-  font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
 }
 
 #about {
-  background: #f8f9fa;
+  margin-top: 40px;
+  background-color: #f8f9fa;
   padding: 3rem 0;
+}
+
+#about .container {
   text-align: center;
+  line-height: 1.8;
 }
 
 #about p {
+  margin-top: 30px;
+  font-size: 1rem;
   max-width: 900px;
-  margin: 15px auto;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
 }
 
 /* ============================================
-   GALLERY
+   GALLERY / ALBUM
    ============================================ */
 .album {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  padding: 3rem 0;
   width: 90%;
   max-width: 1000px;
-  margin: auto;
-  padding: 2rem 0;
+  margin: 0 auto;
+  justify-items: center;
 }
 
 .album img {
   width: 100%;
+  max-width: 250px;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .album img:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* ============================================
-   CONTACT
+   CONTACT SECTION
    ============================================ */
 #contact {
-  background: #f8f9fa;
+  margin-top: 40px;
+  background-color: #f8f9fa;
   padding: 3rem 0;
 }
 
 .contact-info {
+  font-size: 1rem;
+  color: #333;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   align-items: center;
-  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .contact-info p {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .contact-info a {
   color: #333;
   text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: #f4c542;
 }
 
 .contact-info .icon {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 /* ============================================
@@ -200,25 +279,92 @@ footer {
   color: #fff;
   text-align: center;
   padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+footer .container {
+  padding: 0 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 /* ============================================
-   RESPONSIVE
+   FORM STYLES (if used)
+   ============================================ */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+form button:hover {
+  background: #f4c542;
+  color: #333;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (768px)
    ============================================ */
 @media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .header-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
   .hamburger {
     display: flex;
   }
 
   .nav-menu {
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
+    background: #ffffff;
+    flex-direction: column;
     max-height: 0;
     overflow: hidden;
-    transition: 0.3s;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .nav-menu.active {
@@ -228,12 +374,22 @@ footer {
   .nav-menu ul {
     flex-direction: column;
     gap: 0;
-    padding: 10px 0;
+    padding: 15px 0;
   }
 
-  .nav-menu a {
+  .nav-menu ul li a {
     display: block;
-    padding: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-menu ul li a:hover {
+    background-color: #f9f9f9;
+  }
+
+  #home {
+    min-height: 45vh;
+    padding: 40px 15px;
   }
 
   #home h1 {
@@ -243,23 +399,260 @@ footer {
   #home p {
     font-size: 1rem;
   }
+
+  section h2 {
+    font-size: 1.7rem;
+  }
+
+  #about p {
+    font-size: 0.95rem;
+    margin-top: 20px;
+  }
+
+  .album {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    width: 95%;
+    padding: 2rem 0;
+    justify-items: center;
+  }
+
+  .album img {
+    width: 100%;
+    max-width: 220px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact-info {
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .contact-info .icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (480px)
+   ============================================ */
 @media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  header {
+    padding: 0.8rem 0;
+  }
+
+  .header-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .logo-title {
+    gap: 8px;
+  }
+
   .logo {
     width: 45px;
     height: 45px;
   }
 
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2.5px;
+    gap: 4px;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-menu.active {
+    max-height: 250px;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .nav-menu ul li a {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  #home {
+    min-height: 40vh;
+    padding: 30px 12px;
+    background-attachment: scroll;
+  }
+
   #home h1 {
     font-size: 1.6rem;
+    margin-bottom: 0.8rem;
   }
 
   #home p {
     font-size: 0.95rem;
   }
 
+  section {
+    padding: 1.5rem 0;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #about {
+    margin-top: 20px;
+    padding: 2rem 0;
+  }
+
+  #about p {
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+
+  .album {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
   .album img {
-    height: 150px;
+    height: 120px;
+    border-radius: 6px;
+  }
+
+  #contact {
+    margin-top: 20px;
+    padding: 2rem 0;
+  }
+
+  .contact-info {
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .contact-info p {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info a {
+    font-size: 0.9rem;
+  }
+
+  .contact-info .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  footer {
+    padding: 1.5rem 0;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - EXTRA SMALL (320px)
+   ============================================ */
+@media (max-width: 320px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  #home h1 {
+    font-size: 1.3rem;
+  }
+
+  #home p {
+    font-size: 0.85rem;
+  }
+
+  section h2 {
+    font-size: 1.3rem;
+  }
+
+  .album {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .album img {
+    height: 100px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY & UTILITIES
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+
+  body {
+    background: white;
   }
 }
