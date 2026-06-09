@@ -208,7 +208,11 @@ header {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+  .hero:hover {
 
+    transform: scale(1.2); /* Hover efekti için büyütme */
+    transition: transform 0.3s ease; /* Geçiş efekti */
+  }
   .hero {
     position: relative; /* İçerik üstte olacak şekilde arka plan yerleştirir */
     width: 100%; /* Tam genişlik */
