@@ -3,20 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>İstanbul Hafriyat, Kazı ve Yıkım Hizmetleri | BOZ Hafriyat</title>
     <meta
       name="description"
-      content="BOZ Hafriyat, İstanbul'da 40 yılı aşkın deneyimiyle güvenilir hafriyat, kazı ve yıkım hizmetleri sunar. Profesyonel ekip ve modern ekipmanlarla güvenilir çözümler için BOZ Hafriyat ile iletişime geçin."
+      content="BOZ Hafriyat - 40 yılı aşkın tecrübeyle hafriyat, inşaat ve altyapı hizmetleri. Güvenilir, kaliteli çözümler. İstanbul'da hizmetler."
     />
+    <meta
+      name="keywords"
+      content="hafriyat, hafriyat şirketi, inşaat, altyapı, istanbul, hafriyat işleri"
+    />
+    <meta name="author" content="BOZ Hafriyat" />
+    <meta name="theme-color" content="#1f2937" />
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:type" content="business.business" />
+    <meta
+      property="og:title"
+      content="BOZ Hafriyat - Güvenilir Hafriyat Hizmetleri"
+    />
+    <meta
+      property="og:description"
+      content="40 yılı aşkın tecrübeyle profesyonel hafriyat, inşaat ve altyapı çözümleri."
+    />
+    <meta property="og:url" content="https://bozhafriyat.vercel.app" />
+    <meta property="og:site_name" content="BOZ Hafriyat" />
+    <meta
+      property="og:image"
+      content="https://bozhafriyat.vercel.app/boz-logo.png"
+    />
+    <meta property="og:image:alt" content="BOZ Hafriyat Logo" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="BOZ Hafriyat - Güvenilir Hafriyat Hizmetleri"
+    />
+    <meta
+      name="twitter:description"
+      content="40 yılı aşkın tecrübeyle profesyonel hafriyat hizmetleri."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bozhafriyat.vercel.app/boz-logo.png"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bozhafriyat.vercel.app" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="boz-logo.png" />
+    <link rel="shortcut icon" type="image/png" href="boz-logo.png" />
+
+    <!-- Google Search Console Verification -->
+    <meta
+      name="google-site-verification"
+      content="QTH-Kc8qTytap85M7nR1nZWN9KUdsOuQzf7BKVeC4nk"
+    />
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "BOZ Hafriyat",
+        "description": "40 yılı aşkın tecrübeyle hafriyat, inşaat ve altyapı hizmetleri sunan aile şirketi",
+        "image": "https://bozhafriyat.vercel.app/boz-logo.png",
+        "url": "https://bozhafriyat.vercel.app",
+        "telephone": "+905326359629",
+        "email": "boz.hafriyat@outlook.com",
+        "areaServed": "TR",
+        "priceRange": "$$",
+        "serviceType": [
+          "Hafriyat",
+          "İnşaat",
+          "Altyapı Çalışmaları",
+          "Çevre Düzenlemesi"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+905326359629",
+          "email": "boz.hafriyat@outlook.com"
+        }
+      }
+    </script>
+
+    <title>BOZ Hafriyat - 40 Yıllık Hafriyat & İnşaat Hizmetleri</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <div class="logo-title">
-        <img src="boz-logo.png" alt="Boz Hafriyat Logo" class="logo" />
-
-        <h1>BOZ Hafriyat</h1>
-        <nav>
+      <div class="header-container">
+        <div class="logo-title">
+          <img
+            src="boz-logo.png"
+            alt="BOZ Hafriyat - Hafriyat Hizmetleri"
+            class="logo"
+          />
+          <span class="brand-name">BOZ Hafriyat</span>
+        </div>
+        <button
+          class="hamburger"
+          id="hamburger-btn"
+          aria-label="Menüyü aç/kapat"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-menu" id="nav-menu">
           <ul>
             <li><a href="#home">Ana Sayfa</a></li>
             <li><a href="#about">Hakkımızda</a></li>
@@ -28,7 +123,7 @@
 
     <section id="home" class="hero">
       <div class="container">
-        <h2>Yılların Tecrübesiyle Güvenilir Hafriyat Hizmetleri</h2>
+        <h1>Yılların Tecrübesiyle Güvenilir Hafriyat Hizmetleri</h1>
         <p>
           Hafriyat sektöründe lider bir firma olarak, kaliteli ve güvenilir
           çözümler sunuyoruz.
@@ -62,10 +157,22 @@
       </div>
     </section>
     <div class="album">
-      <img src="image1.jpg" alt="Resim 1" />
-      <img src="image2.jpg" alt="Resim 2" />
-      <img src="image3.jpg" alt="Resim 3" />
-      <img src="image4.jpg" alt="Resim 4" />
+      <img
+        src="image1.jpg"
+        alt="BOZ Hafriyat - Hafriyat işleri ve inşaat projesi"
+      />
+      <img
+        src="image2.jpg"
+        alt="BOZ Hafriyat - Profesyonel hafriyat ekibi çalışması"
+      />
+      <img
+        src="image3.jpg"
+        alt="BOZ Hafriyat - Altyapı çalışmaları ve kazı işleri"
+      />
+      <img
+        src="image4.jpg"
+        alt="BOZ Hafriyat - İnşaat alanında tecrübeli ekip"
+      />
     </div>
     <section id="contact">
       <div class="container">

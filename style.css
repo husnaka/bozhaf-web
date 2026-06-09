@@ -1,291 +1,261 @@
+/* ============================================
+   RESET & BASE
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-header {
-    background: #ffffff;
-    color: #000000;
-    padding: 1rem 0;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-header nav ul {
-    list-style: none;
-    margin-left: 300px;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #f4c542;
-}
-
-.hero {
-    background: url('background.jpg') no-repeat center center/cover;
-    color: #ffffff;
-    text-align: center;
-    padding: 100px 0;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
+/* ============================================
+   HEADER
+   ============================================ */
+header {
+  background: #fff;
+  padding: 0.8rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: 0.3s;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+#home {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 60px 20px;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+              url("background.jpg") center/cover;
+}
+
+#home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#home p {
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
 section {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 section h2 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-form input, form textarea, form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-form button:hover {
-    background: #f4c542;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
-
-#about .container {
-  text-align: center; /* Yazıyı yatay olarak ortalar */
-  margin: 0 auto; /* Bölümü ortalar */
-  line-height: 1.6; /* Daha rahat okunabilirlik için satır aralığı */
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 #about {
-  margin-top: 80px; /* Ana sayfadan 'Hakkımızda'ya ekstra boşluk */
+  background: #f8f9fa;
+  padding: 3rem 0;
+  text-align: center;
 }
 
+#about p {
+  max-width: 900px;
+  margin: 15px auto;
+}
+
+/* ============================================
+   GALLERY
+   ============================================ */
+.album {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.album img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.album img:hover {
+  transform: translateY(-5px);
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
 #contact {
-  margin-top: 80px; /* 'Hakkımızda'dan İletişim'e ekstra boşluk */
+  background: #f8f9fa;
+  padding: 3rem 0;
 }
 
-/* İletişim Bilgileri */
 .contact-info {
-    font-size: 1rem;
-    line-height: 2;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* İkon ve yazı arasındaki boşluk */
-    margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-info a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s;
+  color: #333;
+  text-decoration: none;
 }
 
-.contact-info a:hover {
-    color: #f4c542;
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
 }
 
-/* İkonlar */
-.contact-info .icon {
-    width: 20px; /* İkon boyutu */
-    height: 20px;
-}
-header {
-    text-align: center;
-    margin: 1px 0; /* Başlık çevresine boşluk */
-  }
-  
-  .logo-title {
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+
+  .hamburger {
     display: flex;
-    align-items: center; /* Dikey hizalama */
-    justify-content: center; /* Yatay hizalama */
-    gap: 10px; /* Amblem ve başlık arasındaki boşluk */
-  }
-  
-  .logo {
-    width: 190px;
-    height: 190px;
-    object-fit: contain; /* Logoyu düzgün şekilde ölçeklendir */
   }
 
-/* Slider */
-.album {
-    display: flex; /* Resimleri yan yana sıralamak için */
-    flex-wrap: wrap; /* Ekran küçükse alt satıra geçmesi için */
-    gap: 10px; /* Resimler arasında boşluk */
-    justify-content: center; /* Resimleri ortalamak için */
-  }
-  
-  .album img {
-    width: 200px; /* Resimlerin genişliği */
-    height: 150px; /* Resimlerin yüksekliği */
-    object-fit: cover; /* Resim boyutlarını kesmeden ayarlar */
-    border-radius: 5px; /* Köşeleri yuvarlatır (isteğe bağlı) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Resme gölge efekti */
-  }
-  .album {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .album img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .album {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Otomatik sütun düzeni */
-    gap: 10px;
-    justify-items: center; /* Resimleri ortalar */
-  }
-  
-  .album img {
-    width: 90%; /* Grid hücresini doldurur */
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .hero:hover {
-
-    transform: scale(1.2); /* Hover efekti için büyütme */
-    transition: transform 0.3s ease; /* Geçiş efekti */
-  }
-  .hero {
-    position: relative; /* İçerik üstte olacak şekilde arka plan yerleştirir */
-    width: 100%; /* Tam genişlik */
-    height: 300px; /* Bölüm yüksekliği */
-    background-image: url('background.jpg'); /* Arka plan görseli */
-    background-size: cover; /* Görseli bölüme sığdırır */
-    background-position: center; /* Görseli ortalar */
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Arka plan gölgesi */
-    display: flex; /* İçeriği hizalamak için */
-    flex-direction: column;
-    justify-content: center; /* Dikeyde ortalama */
-    align-items: center; /* Yatayda ortalama */
-    text-align: center; /* Metni ortala */
-    color: white; /* Yazı rengi */
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Yazıya gölge */
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Yazıya gölge */
-  }
-
-  .hero::before {
-    content: '';
+  .nav-menu {
     position: absolute;
-    top: 0;
+    top: 70px;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Siyah yarı saydam katman */
-    z-index: 1; /* Yazılar görünsün diye düşük seviye */
-  }
-  
-  .hero h1,
-  .hero p {
-    position: relative; /* Katman altına düşmesin diye */
-    z-index: 2;
+    right: 0;
+    background: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
   }
 
-  #home {
-    position: relative;
-    height: 70vh; /* Boyutu biraz küçülttük */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out; /* Arka plan geçişi için */
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.7); /* Gölgeli efekt */
-    padding: 20px; /* Kenarlardan biraz içeri çekildi */
+  .nav-menu.active {
+    max-height: 300px;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  #home p {
+    font-size: 1rem;
+  }
 }
 
-#home h2 {
+@media (max-width: 480px) {
 
-  color: white; /* Beyaz renk */
-  font-size: 2.5em; /* Yazı boyutunu ayarlayabilirsiniz */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Gölgeli efekt ekleyebilirsiniz */
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
 
+  #home h1 {
+    font-size: 1.6rem;
+  }
+
+  #home p {
+    font-size: 0.95rem;
+  }
+
+  .album img {
+    height: 150px;
+  }
 }
-
-#about p{
-
-   margin-top: 50px;
-
-}
-
-
-
